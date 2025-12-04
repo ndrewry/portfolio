@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif ;
+
+}
+
+body {
+    background: #101733;
+}
+
+.navbar{
+    background: rgba(30, 39, 74, 0.5);
+    backdrop-filter: blur(8px);
+        /* optional—makes it look glassy */
+    -webkit-backdrop-filter: blur(8px);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top:0;
+    z-index:999;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 auto;
+    background: transparent;
+
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item{
+    height: 80px;
+
+}
+
+.navbar__links{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+
+}
+.navbar__links:hover {
+    color: #e988ff;
+    transition: all 0.3s ease;
+
+}
+
+@media screen and (max-width:960px){
+    /* this is what gets displayed below a certain screen width, add in later*/
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background-color: rgba(30, 39, 74, 0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .navbar__menu.active {
+        background: rgba(30, 39, 74, 0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    
+
+    .navbar__toggle{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .navbar__item {
+        width: 100%;
+        background: transparent;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+        background: transparent;
+
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+
+    }
+
+    .navbar__toggle .bar{
+        pointer-events: none;
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+   
+}
+
+/* About me css here*/
+
+.main {
+    background-color: #101733;
+}
+
+.main__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: #101733;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+
+    gap: 40px;
+}
+
+.main__content h1{
+    font-size: 6rem;
+    background-color: #101733;
+    background-image: linear-gradient(to top, #E988FF, #45cedd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content h2{
+    font-size: 4rem;
+    background-color: #101733;
+    background-image: linear-gradient(to top, red 0%, white 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
+}
+
+.main__content p{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ededf5;
+}
+
+.main__img--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__img--container i {
+    font-size: 500px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    color: #45CEDD;
+}
+.main__img--container i:hover {
+    transform: translateY(-6px);
+    background-image: linear-gradient(to top, #E988FF, #45cedd 100%);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+}
+
+.main__links--container{
+    margin-top: 20px;     
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;            
+}
+
+.main__links--container i {
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    color:#45CEDD;
+}
+
+.main__links--container i:hover {
+    transform: translateY(-6px);
+    color: #E988FF;  
+}
+
+.footer__container {
+    background-color: #101733;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+}
+.footer__content h2 {
+    margin-top: 1rem;
+    font-size: 2 rem;
+    font-weight: 700;
+    color: aliceblue;
+}
+
+
+/* For mobile */
+
+@media screen and (max-width: 760px){
+    .main__container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+
+    }
+
+    .main__content{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    .main__content h1{
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+    .main__content h2{
+        font-size: 3rem;
+    }
+    .main__content p{
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .main__image--container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #main__img {
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        height: auto;
+    }
+
+    .main__links--container{
+        margin-top: 20px;     
+        display: flex;
+        justify-content: center;
+        gap: 20px;            
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .main__content h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .main__content h2 {
+        font-size: 2rem;
+    }
+
+    .main__content p {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+}
+
