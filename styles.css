@@ -196,18 +196,42 @@ main {
     justify-self: center;
 }
 
-.main__img{
+.main__img {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 360px;
 }
 
-.main__img i {
-    
+.main__img img {
+    transition: transform 0.15s ease;
+    cursor: pointer;
 }
-.main__img i:hover {
-  
+
+.main__img img:hover {
+    animation: wiggle 0.45s ease-in-out;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(3deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
 }
 
 .main__links{
@@ -228,19 +252,6 @@ main {
 .main__links i:hover {
     transform: translateY(-6px);
     color: #E988FF;  
-}
-
-.footer__container {
-    background-color: #101733;
-    padding: 5rem 0;
-    display: flex;
-    justify-content: center;
-}
-.footer__content h2 {
-    margin-top: 1rem;
-    font-size: 2 rem;
-    font-weight: 700;
-    color: aliceblue;
 }
 
 
@@ -313,3 +324,53 @@ main {
     }
 }
 
+.ctf {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(30, 39, 74, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 12px;
+}
+
+.ctf h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    background-image: linear-gradient(to right, #E988FF, #45CEDD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ctf__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.ctf__item {
+    padding: 1rem 1.25rem;
+    background: rgba(16, 23, 51, 0.8);
+    border-left: 4px solid #45CEDD;
+    border-radius: 6px;
+    color: #ededf5;
+    line-height: 1.6;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ctf__item strong {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.ctf__item em {
+    font-style: normal;
+    color: #b8c1ff;
+    font-size: 0.95rem;
+}
+
+.ctf__item:hover {
+    transform: translateX(6px);
+    border-left-color: #E988FF;
+}
